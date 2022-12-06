@@ -4,15 +4,13 @@ let menuBg;
 let links;
 let footerYear;
 let menuBarBox;
-let hamburgerHead
-
+let hamburgerHead;
 
 const main = () => {
 	prepareDOMElements();
 	prepareDOMEvents();
 	handleMobileNav();
 	handleCurrentYear();
-	// addBarBorder();
 };
 
 const prepareDOMElements = () => {
@@ -22,12 +20,12 @@ const prepareDOMElements = () => {
 	links = document.querySelectorAll('.nav-link-mobile');
 	footerYear = document.querySelector('.footer-year');
 	menuBarBox = document.querySelector('.menu-bar-box');
-  hamburgerHead = document.querySelector('.hamburger-head')
+	hamburgerHead = document.querySelector('.hamburger-head');
 };
 
 const prepareDOMEvents = () => {
 	hamburger.addEventListener('click', menuOnClick);
-  window.addEventListener('scroll', addBarBorder)
+	window.addEventListener('scroll', addBorder)
 };
 
 const handleMobileNav = () => {
@@ -46,28 +44,21 @@ function menuOnClick() {
 	menuBg.classList.toggle('change-bg');
 }
 
-const addBarBorder = () => {
-   const i =  menuBarBox.getBoundingClientRect().bottom
-  if (i === 116) {
-      menuBarBox.style.borderTop = '1px solid #fffae7'
-  } else {
-    menuBarBox.style.borderTop = 'none'
-  }
-
-  // if (window.scrollY >= 250) {
-  //   hamburgerHead.style.backgroundColor = 'black'
-  // } else {
-  //   hamburgerHead.style.backgroundColor = 'transparent'
-  // }
-
-
-};
-
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear();
 	footerYear.innerText = year;
 };
 
-
+const addBorder = () => {
+	const observer = new IntersectionObserver((entry) => {
+		const distance = entry[0].boundingClientRect.top;
+		if (distance <= 80) {
+			menuBarBox.style.borderTop = '1px solid #fffae7';
+		} else {
+			menuBarBox.style.borderTop = 'none';
+		}
+	});
+	observer.observe(menuBarBox);
+};
 
 document.addEventListener('DOMContentLoaded', main);
