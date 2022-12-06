@@ -150,7 +150,7 @@ header {
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
-		background-image: url('/dist/img/pizzabig.jpg');
+		background-image: url("../img/pizzabig.jpg");
 		background-size: cover;
 		background-position: center;
 
@@ -468,7 +468,7 @@ footer {
 
 	.heading-text {
 		.header-hero {
-			background-image: url('/dist/img/pizza.jpg');
+			background-image: url("../img/pizza.jpg");
 
 			h1 {
 				text-align: center;
