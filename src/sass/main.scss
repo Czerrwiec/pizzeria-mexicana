@@ -469,6 +469,7 @@ footer {
 	.heading-text {
 		.header-hero {
 			background-image: url("../img/pizza.jpg");
+			background-position: left;
 
 			h1 {
 				text-align: center;
@@ -487,7 +488,7 @@ footer {
 			}
 		}
 		.hero-shadow {
-			background-color: rgba(0, 0, 0, 0.8);
+			background-color: rgba(0, 0, 0, 0.75);
 		}
 	}
 
