@@ -5,12 +5,20 @@ let links;
 let footerYear;
 let menuBarBox;
 let hamburgerHead;
+let slider;
+let prevBtn;
+let nextBtn;
+let listOfSelectors;
+let selectorParent;
+
+let index = 0;
 
 const main = () => {
 	prepareDOMElements();
 	prepareDOMEvents();
 	handleMobileNav();
 	handleCurrentYear();
+	handleSelectors()
 };
 
 const prepareDOMElements = () => {
@@ -21,11 +29,19 @@ const prepareDOMElements = () => {
 	footerYear = document.querySelector('.footer-year');
 	menuBarBox = document.querySelector('.menu-bar-box');
 	hamburgerHead = document.querySelector('.hamburger-head');
+	slider = document.querySelector('.slider');
+	prevBtn = document.querySelector('.prev');
+	nextBtn = document.querySelector('.next');
+	listOfSelectors = document.querySelectorAll('.list li');
+	selectorParent = document.querySelector('.list');
 };
 
 const prepareDOMEvents = () => {
 	hamburger.addEventListener('click', menuOnClick);
-	window.addEventListener('scroll', addBorder)
+	window.addEventListener('scroll', addBorder);
+
+	nextBtn.addEventListener('click', nextImg);
+	prevBtn.addEventListener('click', prevImg);
 };
 
 const handleMobileNav = () => {
@@ -59,6 +75,35 @@ const addBorder = () => {
 		}
 	});
 	observer.observe(menuBarBox);
+};
+
+const prevImg = () => {
+	index = index > 0 ? index - 1 : 0;
+	cleanUpAndTranslate();
+	selectorParent.children[index].classList.add('selected');
+};
+
+const nextImg = () => {
+	index = index < 5 ? index + 1 : 5;
+	cleanUpAndTranslate();
+	selectorParent.children[index].classList.add('selected');
+};
+
+const handleSelectors = () => {
+	listOfSelectors.forEach((item, i) => {
+		item.addEventListener('click', () => {
+			index = i;
+			cleanUpAndTranslate();
+			item.classList.add('selected');
+		});
+	});
+}
+
+const cleanUpAndTranslate = () => {
+	listOfSelectors.forEach((x) => {
+		x.classList.remove('selected');
+	});
+	slider.style.transform = `translate(${index * -16.67}%)`;
 };
 
 document.addEventListener('DOMContentLoaded', main);

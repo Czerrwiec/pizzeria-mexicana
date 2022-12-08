@@ -150,7 +150,7 @@ header {
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
-		background-image: url("../img/pizzabig.jpg");
+		background-image: url('/dist/img/pizzabig.jpg');
 		background-size: cover;
 		background-position: center;
 
@@ -158,7 +158,7 @@ header {
 			text-align: center;
 			font-size: 9rem;
 			color: #fffae7;
-			font-family: 'Sriracha', cursive;
+			// font-family: 'Sriracha', cursive;
 			letter-spacing: 10px;
 			z-index: 20;
 		}
@@ -344,6 +344,115 @@ header {
 	}
 }
 
+.gallery {
+	padding: 3em 0;
+	margin-bottom: 5em;
+
+	h2 {
+		text-align: center;
+		margin-bottom: 2em;
+	}
+
+	.carousel-container {
+		width: 90%;
+		margin: 10px auto;
+
+		.carousel {
+			position: relative;
+			height: 50%;
+			overflow: hidden;
+			height: 700px;
+		}
+		.slider {
+			display: flex;
+			height: 100%;
+			width: 600%;
+			transition: all 0.5s;
+			.section {
+				display: flex;
+				justify-content: center;
+				align-self: center;
+				flex-basis: 100%;
+				height: 100%;
+				background-size: cover;
+			}
+
+			.section-one {
+				background-image: url('/dist/img/gallery1.jpg');;
+			}
+			.section-two {
+				background-image: url('/dist/img/gallery2.jpg');;
+			}
+			.section-three {
+				background-image: url('/dist/img/gallery3.jpg');;
+			}
+			.section-four {
+				background-image: url('/dist/img/gallery4.jpg');;
+			}
+			.section-five {
+				background-image: url('/dist/img/gallery5.jpg');;
+			}
+			.section-six {
+				background-image: url('/dist/img/gallery6.jpg');;
+			}
+		}
+	}
+
+	.controls {
+		.arrow {
+			position: absolute;
+			top: 46%;
+			padding: 0.2em 0;
+			font-size: 4.5rem;
+			color: #fffae7;
+			transition: transform 0.3s;
+			background-color: rgba(0, 0, 0, 0.65);
+			opacity: 0.8;
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+			cursor: pointer;
+		}
+
+		i {
+			display: block;
+			transition: transform 0.3s;
+			&:hover {
+				transform: scale(0.8);
+			}
+		}
+
+		.next {
+			right: 0%;
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+		}
+
+		.list {
+			display: flex;
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			margin: 0;
+			padding: 0;
+			transform: translate(-50%);
+			list-style: none;
+			li {
+				width: 12px;
+				height: 12px;
+				margin: 5px;
+				border: 2px solid #fffae7;
+				border-radius: 50%;
+				background-color: #fffae7;
+				cursor: pointer;
+			}
+		}
+
+		.list li.selected {
+			background-color: transparent;
+		}
+	}
+}
+
 .contact {
 	background-color: #fffae7;
 	.contact-container {
@@ -415,7 +524,6 @@ footer {
 		}
 	}
 
-	
 	.footer-bot {
 		display: flex;
 		margin: 0.5em 0;
@@ -472,7 +580,7 @@ footer {
 
 	.heading-text {
 		.header-hero {
-			background-image: url("../img/pizza.jpg");
+			background-image: url('/dist/img/pizza.jpg');
 			background-position: left;
 
 			h1 {
