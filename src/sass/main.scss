@@ -150,7 +150,7 @@ header {
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
-		background-image: url('/dist/img/pizzabig.jpg');
+		background-image: url('./dist/img/pizzabig.jpg');
 		background-size: cover;
 		background-position: center;
 
@@ -378,22 +378,22 @@ header {
 			}
 
 			.section-one {
-				background-image: url('/dist/img/gallery1.jpg');;
+				background-image: url('./dist/img/gallery1.jpg');
 			}
 			.section-two {
-				background-image: url('/dist/img/gallery2.jpg');;
+				background-image: url('./dist/img/gallery2.jpg');
 			}
 			.section-three {
-				background-image: url('/dist/img/gallery3.jpg');;
+				background-image: url('./dist/img/gallery3.jpg');
 			}
 			.section-four {
-				background-image: url('/dist/img/gallery4.jpg');;
+				background-image: url('./dist/img/gallery4.jpg');
 			}
 			.section-five {
-				background-image: url('/dist/img/gallery5.jpg');;
+				background-image: url('./dist/img/gallery5.jpg');
 			}
 			.section-six {
-				background-image: url('/dist/img/gallery6.jpg');;
+				background-image: url('./dist/img/gallery6.jpg');
 			}
 		}
 	}
@@ -476,10 +476,6 @@ header {
 			p {
 				font-size: 2rem;
 				margin: 0.2em 0;
-			}
-
-			hr {
-				margin: 1em 0em;
 			}
 
 			svg {
@@ -580,7 +576,7 @@ footer {
 
 	.heading-text {
 		.header-hero {
-			background-image: url('/dist/img/pizza.jpg');
+			background-image: url('./dist/img/pizza.jpg');
 			background-position: left;
 
 			h1 {
@@ -683,6 +679,29 @@ footer {
 		}
 	}
 
+	.gallery {
+		padding: 0;
+		margin-bottom: 3em;
+
+		h2 {
+			display: none;
+		}
+
+		.carousel-container {
+			width: 100%;
+			margin: 10px auto;
+
+			.carousel {
+				height: 90vh;
+			}
+			.slider {
+				.section {
+					background-position: center;
+				}
+			}
+		}
+	}
+
 	.contact {
 		.contact-container {
 			display: flex;
@@ -734,6 +753,22 @@ footer {
 			font-size: 1.7rem;
 			p {
 				margin: 0 0.3em;
+			}
+		}
+	}
+
+	.gallery {
+		margin-bottom: 3em;
+		padding: 0;
+		h2 {
+			display: none;
+		}
+
+		.carousel-container {
+			width: 100%;
+
+			.carousel {
+				height: 90vh;
 			}
 		}
 	}
